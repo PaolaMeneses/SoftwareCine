@@ -1,0 +1,11 @@
+C:\Users\paola\source\repos\SoftwareCine\SoftwareCine\SotfwareCine.Shared\bin\Debug\net7.0\SotfwareCine.Shared.deps.json
+C:\Users\paola\source\repos\SoftwareCine\SoftwareCine\SotfwareCine.Shared\bin\Debug\net7.0\SotfwareCine.Shared.dll
+C:\Users\paola\source\repos\SoftwareCine\SoftwareCine\SotfwareCine.Shared\bin\Debug\net7.0\SotfwareCine.Shared.pdb
+C:\Users\paola\source\repos\SoftwareCine\SoftwareCine\SotfwareCine.Shared\obj\Debug\net7.0\SotfwareCine.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\paola\source\repos\SoftwareCine\SoftwareCine\SotfwareCine.Shared\obj\Debug\net7.0\SotfwareCine.Shared.AssemblyInfoInputs.cache
+C:\Users\paola\source\repos\SoftwareCine\SoftwareCine\SotfwareCine.Shared\obj\Debug\net7.0\SotfwareCine.Shared.AssemblyInfo.cs
+C:\Users\paola\source\repos\SoftwareCine\SoftwareCine\SotfwareCine.Shared\obj\Debug\net7.0\SotfwareCine.Shared.csproj.CoreCompileInputs.cache
+C:\Users\paola\source\repos\SoftwareCine\SoftwareCine\SotfwareCine.Shared\obj\Debug\net7.0\SotfwareCine.Shared.dll
+C:\Users\paola\source\repos\SoftwareCine\SoftwareCine\SotfwareCine.Shared\obj\Debug\net7.0\refint\SotfwareCine.Shared.dll
+C:\Users\paola\source\repos\SoftwareCine\SoftwareCine\SotfwareCine.Shared\obj\Debug\net7.0\SotfwareCine.Shared.pdb
+C:\Users\paola\source\repos\SoftwareCine\SoftwareCine\SotfwareCine.Shared\obj\Debug\net7.0\ref\SotfwareCine.Shared.dll

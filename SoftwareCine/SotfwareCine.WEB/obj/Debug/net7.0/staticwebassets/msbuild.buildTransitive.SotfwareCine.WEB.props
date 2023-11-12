@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\SotfwareCine.WEB.props" />
+</Project>
