@@ -16,8 +16,8 @@ namespace SotfwareCine.Shared.Entities
         [Display(Name = "Horario")]
 
         public DateTime Hhorario { get; set; }
-        public int IdTeatro { get; set; }
-        public Teatro Teatro { get; set; }
+        //public int IdTeatro { get; set; }
+        //public Teatro Teatro { get; set; }
 
         public Horario(DateTime horario)
         {

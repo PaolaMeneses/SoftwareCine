@@ -33,12 +33,7 @@ namespace SotfwareCine.API.Migrations
                     b.Property<DateTime>("Hhorario")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("IdTeatro")
-                        .HasColumnType("int");
-
                     b.HasKey("IdHorario");
-
-                    b.HasIndex("IdTeatro");
 
                     b.ToTable("Horarios");
                 });
@@ -59,22 +54,6 @@ namespace SotfwareCine.API.Migrations
                     b.HasKey("IdTeatro");
 
                     b.ToTable("Teatros");
-                });
-
-            modelBuilder.Entity("SotfwareCine.Shared.Entities.Horario", b =>
-                {
-                    b.HasOne("SotfwareCine.Shared.Entities.Teatro", "Teatro")
-                        .WithMany("Horarios")
-                        .HasForeignKey("IdTeatro")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Teatro");
-                });
-
-            modelBuilder.Entity("SotfwareCine.Shared.Entities.Teatro", b =>
-                {
-                    b.Navigation("Horarios");
                 });
 #pragma warning restore 612, 618
         }

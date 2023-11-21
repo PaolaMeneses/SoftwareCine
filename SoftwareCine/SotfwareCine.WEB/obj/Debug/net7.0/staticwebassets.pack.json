@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\SotfwareCine.WEB.styles.css"
     },
     {
+      "Id": "C:\\Users\\paola\\source\\repos\\SoftwareCine\\SoftwareCine\\SotfwareCine.WEB\\wwwroot\\cinesoft.png",
+      "PackagePath": "staticwebassets\\cinesoft.png"
+    },
+    {
       "Id": "C:\\Users\\paola\\source\\repos\\SoftwareCine\\SoftwareCine\\SotfwareCine.WEB\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },

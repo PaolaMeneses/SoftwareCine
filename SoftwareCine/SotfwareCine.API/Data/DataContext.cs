@@ -14,7 +14,7 @@ namespace SotfwareCine.API.Data
         public DbSet<Teatro> Teatros { get; set; }
         public DbSet<Horario> Horarios { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+      /*  protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
@@ -22,7 +22,7 @@ namespace SotfwareCine.API.Data
                 .HasOne(t => t.Teatro)
                 .WithMany(h => h.Horarios)
                 .HasForeignKey(t => t.IdTeatro);
-        }
+        }*/
     }
 
 }

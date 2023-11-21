@@ -4,20 +4,111 @@
 
 <h1>Horarios y teatros</h1>
 
-<select id="listaDesplegable">
-    <!-- Opciones de la lista desplegable -->
-    <option value="opcion1">Mayorca</option>
-    <option value="opcion2">Florida</option>
-    <option value="opcion3">Preium plaza</option>
-    <option value="opcion4">Tesoro</option>
-</select>
 
-<label for="fechaSeleccionada">Selecciona una fecha:</label>
-<input type="date" id="fechaSeleccionada" name="fechaSeleccionada">
+<img src="/cinesoft.png"/>
 
-<button id="buscarResultados">Buscar Resultados</button>
+<!-- <div class="hour_close"><i class="fa fa-times"></i></div> -->
+
+<section style="display: grid; grid-template-columns: repeat(3, 1fr);margin-bottom: 30px;">
+    <div style="grid-column: 1;background-color: red; color: white;padding: 30px;">
+        <article class="col_filter" style="text-align: center;">
+            <h1 style="font-size: 1em;font-weight: 800;">
+                HORARIOS Y TEATROS
+            </h1>
+            <h6 style="font-size: .8em;">
+                Seleccione un teatro y fecha para conocer los horarios disponibles
+            </h6>
+        </article>
+        <div style="display: flex; justify-content: center; margin: 10px 0; gap: 20px;">
+            <div>
+                <label for="fechaSeleccionada" style="font-size: 12px;">Teatros:</label>
+                <select id="listaDesplegable" style="width: 100%;">
+                    <!-- Opciones de la lista desplegable -->
+                    <option value="opcion1">Mayorca</option>
+                    <option value="opcion2">Florida</option>
+                    <option value="opcion3">Preium plaza</option>
+                    <option value="opcion4">Tesoro</option>
+                </select>
+            </div>
+            <div>
+                <label for="fechaSeleccionada" style="font-size: 12px;">Fecha:</label>
+                <input type="date" id="fechaSeleccionada" name="fechaSeleccionada" style="width: 100%;">
+            </div>
+        </div>
+        <div style="display: flex; justify-content: center;">
+            <button type="button" id="buscarResultados" style="width: 200px;background-color: red;color: white;border: white 1px solid;">Buscar Resultados</button>
+        </div>
+        
+    </div>
+    <div style="grid-column: 2/4; background-color: black; color: white; padding: 30px; display: flex; align-items: center; justify-content: center;">
+        <h3 id="scheduleText" style="font-size: 1em; text-align: center;">La programación de cine está sujeta a cambios y/o modificaciones sin previo aviso.</h3>
+        <div id="schedule" style="display: none;grid-template-columns: repeat(6, 100px);gap: 30px;">
+            <div style="text-align: center;">
+                <p><span style="background: red;padding: 10px;">2D</span></p>
+                <p>Doblada</p>
+                <div>
+                    <span>GENERAL</span>
+                    <div>
+                        <p class="time">4:30</p>
+                        <p class="time">6:50</p>
+                        <p class="time">9:10</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <p><span style="background: red;padding: 10px;">3D</span></p>
+                <p>Doblada</p>
+                <div>
+                    <span>4DX</span>
+                    <div>
+                        <p class="time">3:30</p>
+                        <p class="time">7:10</p>
+                        <p class="time">9:20</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="buyHere" style="display: none; grid-template-columns: repeat(2, 1fr); margin: 10px 0">
+    <div style="grid-column: 1">
+        <p><span style="font-weight: 900;font-size: 20px;border-bottom: red solid 1px;margin-right: 30px;"> VALOR BOLETA</span> 
+            <sup style="font-size: 15px;font-weight: 800;">4DX <span style="color: red;">$ 28.000</span>
+            </sup>
+        </p>
+    </div>
+    <div style="grid-column: 2">
+        <button type="button" style="width: 300px;height: 50px;color: white;background: #32e47d;font-weight: 900;border-color: #32e47d;">
+            COMPRA AQUÍ
+        </button>
+    </div>
+</section>
+<script>
+    function showSchedule() {
+        const scheduleText = document.querySelector("#scheduleText")
+        const schedule = document.querySelector("#schedule")
+
+        scheduleText.style.display = "none"
+        schedule.style.display = "grid"
+    }
+
+    const buscarResultados = document.querySelector("#buscarResultados")
+    const times = document.querySelectorAll(".time")
+    console.log("times", times)
+    times.forEach((time) => {
+        time.addEventListener("click", function () {
+            const buyHere = document.querySelector("#buyHere")
+            times.forEach((t) => {
+               t.style.backgroundColor = "black"
+            })
+
+            time.style.backgroundColor = "red"
+            buyHere.style.display = "grid"
+        })
+    })
+
+    buscarResultados.addEventListener("click", showSchedule)
 
 
 
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+</script>

@@ -17,7 +17,7 @@ namespace SotfwareCine.Shared.Entities
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public string NTeatro { get; set; } = null!;
 
-        public ICollection<Horario> Horarios { get; set; }
+       // public ICollection<Horario> Horarios { get; set; }
     }
 }
 
