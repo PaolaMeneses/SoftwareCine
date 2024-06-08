@@ -1,30 +1,25 @@
-# ASP.NET
-# Build and test ASP.NET projects.
-# Add steps that publish symbols, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
-
 trigger:
-- main
+- main  # Replace with your preferred trigger (e.g., branch push)
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: windows-latest
 
 variables:
-  solution: '**/*.sln'
+  solution: '**/*.sln'  # Searches for all solution files in the repository
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
 steps:
-- task: NuGetToolInstaller@1
+- task: NuGetToolInstaller@1  # Installs the NuGet CLI tool
 
 - task: NuGetCommand@2
   inputs:
-    restoreSolution: '$(solution)'
+    restoreSolution: '$(solution)'  # Restores NuGet packages for the solution
 
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
+    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(Build.ArtifactStagingDirectory)"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
@@ -32,3 +27,30 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+# Optional stages (consider adding these as needed)
+
+stage: PublishArtifacts  # Optional stage for publishing build artifacts
+  dependsOn: Build  # Ensures publishing happens after the build stage
+  jobs:
+  - job: PublishArtifactsJob  # Corrected job key
+    displayName: Publish Build Artifacts
+    condition: succeededOrFailed()  # Publish artifacts regardless of build success/failure
+    steps:
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'  # Adjust if needed
+
+stage: Deploy  # Optional stage for deployment (replace with your deployment task)
+  dependsOn: PublishArtifacts  # Ensure deployment happens after publishing (if included)
+  jobs:
+  - job: DeployJob  # Corrected job key
+    displayName: Deploy ASP.NET Application
+    condition: succeeded()  # Deploy only if previous stages succeed
+    steps:
+      # Replace this with your specific deployment task (e.g., Azure App Service Deployment)
+      # ...
+
+
